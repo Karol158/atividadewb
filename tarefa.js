@@ -14,12 +14,9 @@ pessoas.push(pessoa);
 
 });
 app.post('/pessoa',(req,res)=>{
-    let objetopublicaçao={
-
-        texto:req.params.texto,
-     }
-     objetos.push(objetopublicaçao)
-       
+  const { id, nome } = req.body; 
+  let novapessoa = { id, nome };
+  objetos.push(novapessoa);   
 });
 
 app.delete('/pessoa',(req , res)=>{
@@ -30,5 +27,8 @@ app.delete('/pessoa',(req , res)=>{
   app.listen(3000,()=>{
     console.log('Servidor em execução...')
     
-    })
+    });
+
+
+
     
